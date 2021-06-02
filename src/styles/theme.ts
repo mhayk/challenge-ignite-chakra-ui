@@ -9,7 +9,6 @@ export const theme = extendTheme({
     },
     textStyles: {
         h1: {
-            // you can also use responsive styles
             fontSize: ["20px", "36px"],
             fontWeight: "bold",
             lineHeight: "30px",
@@ -20,5 +19,8 @@ export const theme = extendTheme({
             fontWeight: "400",
             color: "gray.100"
         }
+    },
+    fonts: {
+        body: "Poppins, sans-serif",
     }
 })
