@@ -1,7 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
-import { Box, Divider, Flex, List, ListItem, Text, UnorderedList } from '@chakra-ui/react'
+import { Box, Divider, Flex, List, ListItem, Text } from '@chakra-ui/react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+// import Swiper core and required modules
+import SwiperCore, {
+  Navigation, Pagination, Keyboard
+} from 'swiper/core';
+
+
+// install Swiper modules
+SwiperCore.use([Navigation, Pagination, Keyboard]);
 
 export default function Home() {
   return (
@@ -53,6 +63,26 @@ export default function Home() {
         <Text color="gray.200" fontWeight="500" fontSize="20px">Vamos nessa?</Text>
         <Text color="gray.200" fontWeight="500" fontSize="20px" mb="20px">Então escolha seu continente</Text>
       </Flex>
+
+      <Flex height="250px" mb="24px">
+        <Swiper
+          navigation={true} pagination={true} mousewheel={true} keyboard={true}
+        >
+          <SwiperSlide>
+            <Flex height="100%" direction="column" justify="center" alignItems="center" bgImage="/images/mobile-europa.jpg">
+              <Text fontSize="24px" fontWeight="700" color="gray.50">Europa</Text>
+              <Text fontSize="14px" fontWeight="700" color="gray.100">O continente mais antigo</Text>
+            </Flex>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image src="/images/mobile-europa.jpg" alt="Europa" layout="fill" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image src="/images/mobile-europa.jpg" alt="Europa" layout="fill" />
+          </SwiperSlide>
+        </Swiper>
+      </Flex>
+
 
     </div >
   )
